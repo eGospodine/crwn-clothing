@@ -29,14 +29,15 @@ class Directory extends React.Component{
                 },
                 {
                     title: 'womens',
-                    imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+                    // imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+                    imageUrl: 'https://cdn.pixabay.com/photo/2017/12/26/09/15/woman-3040029_1280.jpg',
                     size: 'large',
                     id: 4,
                     linkUrl: 'shop/womens'
                 },
                 {
                     title: 'mens',
-                    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+                    imageUrl: 'https://cdn.pixabay.com/photo/2017/08/02/10/03/people-2570596_1280.jpg',
                     size: 'large',
                     id: 5,
                     linkUrl: 'shop/mens'
@@ -49,8 +50,8 @@ class Directory extends React.Component{
         return(
             <div className='directory-menu'>
                 {
-                this.state.sections.map(({ title, imageUrl, id, size }) => (
-                    <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+                this.state.sections.map(({ id, ...otherSectionProps }) => (
+                    <MenuItem key={id} {...otherSectionProps} />
                 ))
                 }
             </div>
